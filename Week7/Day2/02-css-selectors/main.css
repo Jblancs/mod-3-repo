@@ -1,4 +1,41 @@
 /* Your code here */
+#page-title {
+    font-style: bold;
+}
+
+.pagenum {
+    position: absolute;
+    right: 1%;
+    font-size: small;
+}
+
+p {
+    text-align: justify;
+    margin: .75em 0;
+}
+
+pre {
+    margin: 100px auto;
+    width: fit-content;
+}
+
+.td2>a {
+    text-decoration: none;
+}
+
+.td2>a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+pre>a {
+    color: black;
+    text-decoration: none;
+}
+
+pre>a:hover {
+    text-decoration: underline;
+}
 
 /* ===== DO NOT EDIT BELOW THIS COMMENT ===== */
 
@@ -6,11 +43,13 @@
     text-indent: 0em;
 }
 
-body > p {
+body>p {
     text-indent: 1em;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: normal;
 }
 
@@ -38,7 +77,9 @@ hr {
     width: 45%;
 }
 
-table, .bk1, .figd {
+table,
+.bk1,
+.figd {
     margin: 0 auto;
 }
 
@@ -50,11 +91,16 @@ td {
     padding-right: 6em;
 }
 
-.td2, .ad1 {
+.td2,
+.ad1 {
     text-align: right;
 }
 
-.td1, .ada, .adb, .adc, .ad2 {
+.td1,
+.ada,
+.adb,
+.adc,
+.ad2 {
     text-align: left;
 }
 
@@ -78,11 +124,20 @@ body {
     margin-right: 10%;
 }
 
-.center, h1, h2, h3, .bk2, .bk4, .bk5, .bk6 {
+.center,
+h1,
+h2,
+h3,
+.bk2,
+.bk4,
+.bk5,
+.bk6 {
     text-align: center;
 }
 
-.smcap, .bk6, .td1 {
+.smcap,
+.bk6,
+.td1 {
     font-variant: small-caps;
 }
 
@@ -107,7 +162,8 @@ img {
     padding: 0;
 }
 
-.bk2, .bk3 {
+.bk2,
+.bk3 {
     border-top: solid 2px;
     font-size: x-large;
     padding: .5em 0;
@@ -123,16 +179,21 @@ img {
     letter-spacing: .05em;
 }
 
-.bk5, .ad1, .ad2 {
+.bk5,
+.ad1,
+.ad2 {
     font-weight: bold;
     font-size: xx-large;
 }
 
-.bk6, .bk5, .tb {
+.bk6,
+.bk5,
+.tb {
     margin: 1em auto;
 }
 
-h3, .bk7 {
+h3,
+.bk7 {
     margin-top: 2em;
 }
 
