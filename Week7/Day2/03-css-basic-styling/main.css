@@ -1,28 +1,30 @@
 h1 {
     font-size: ;
-    font-family: ;
+    font-family: sans-serif;
     padding: ;
     margin: ;
     font-weight: ;
     text-decoration: ;
     color: ;
     background-color: ;
+    width:
 }
 
 h2 {
     font-size: ;
-    font-family: ;
+    font-family: sans-serif;
     padding: ;
     margin: ;
     font-weight: ;
     color: ;
     background-color: ;
+    width:
 }
 
 p {
-    font-family: ;
+    font-family: sans-serif;
     font-size: ;
-    padding: ;
+    padding: 5px;
     margin: ;
     color: ;
     background-color: ;
@@ -30,8 +32,8 @@ p {
 
 .logo {
     background-size: cover;
-    background-image: url();
+    background-image: url("https://appacademy.github.io/styleguide/assets/logo/logo-emblem-black-1000.png");
     background-color: ;
-    height: ;
-    width: ;
+    height: 100px;
+    width: 100px;
 }

@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     /* DO NOT EDIT */
     font-family: sans-serif;
 }
@@ -10,11 +11,19 @@ html, body {
     vertical-align: bottom;
 
     /* Your code here */
+    height: 30px;
+    width: 30px;
+    margin-bottom: 30px;
 }
 
 
 h1 {
     /* Your code here */
+    display: inline;
+    /* puts h1 next to logo instead of below */
+    /* does not allow change in height/width */
+
+
 }
 
 /* Phase 2 */
@@ -24,10 +33,22 @@ h1 {
     vertical-align: top;
 
     /* Your code here */
+    border: 4px dotted black;
+    background-color: yellow;
+    height: 120px;
+    width: 120px;
+
+    margin: 10px;
+    padding: 20px;
+
+    display: inline-block;
+    /* allows you to set height/width for inline-block */
 }
 
 .alternate {
     /* Your code here */
+    box-sizing: border-box;
+    /* lets you make the 120px include borders and padding */
 }
 
 /* Phase 3 */
@@ -39,12 +60,17 @@ h1 {
     right: 0;
     bottom: 0;
 }
+
 .quote {
     /* DO NOT EDIT */
     background-color: lightgray;
     font-size: larger;
 
     /* Your code here */
+    width: fit-content;
+    padding: 40px;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 .attribution {
@@ -52,4 +78,5 @@ h1 {
     font-style: italic;
 
     /* Your code here */
+    display: block;
 }
