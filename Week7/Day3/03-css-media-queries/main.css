@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     font-family: sans-serif;
 }
@@ -21,10 +22,12 @@ header {
     gap: 1rem;
     display: flex;
 }
-.content > div {
+
+.content>div {
     flex: 1 1 100%;
 }
-.content > div:first-child {
+
+.content>div:first-child {
     flex: 0;
 }
 
@@ -74,9 +77,11 @@ header {
 .page {
     flex-direction: column;
 }
+
 .content {
     flex-direction: column;
 }
+
 .sidebar {
     flex-direction: row;
     justify-content: center;
@@ -85,13 +90,55 @@ header {
 /* ----- Phase 1 - Moderate Screen ----- */
 
 /* Your code here */
+@media screen and (min-width: 821px) {
+    .content {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        /*background-color: #6C547B;*/
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 
 /* ----- Phase 1 - Wide Screen ----- */
 
 /* Your code here */
+@media screen and (min-width: 1220px) {
+    .page {
+        flex-direction: row;
+    }
+}
 
 /* ===== PRINTING ===== */
 
 /* Phase 2 */
 
 /* Your code here */
+@media print {
+
+    header,
+    .sidebar {
+        display: none
+    }
+
+    .story-box {
+        padding: 0;
+        border-radius: 0;
+        background-color: transparent;
+        filter: none;
+    }
+
+    .image-box {
+        position: absolute;
+        box-sizing: border-box;
+        top: 10px;
+        right: 10px;
+        margin: 10px;
+        width: 15%;
+    }
+
+
+}

@@ -5,9 +5,13 @@
     width: auto;
     margin-left: 300px;
     /* Your code here */
+    transition: transform 2s;
 }
 
-/* Create rocket hover animation here
+/* /* Create rocket hover animation here */
+.rocket_svg:hover {
+    transform: rotate(250deg);
+}
 
 
 /* ===== Problem 2 ===== */
@@ -16,7 +20,13 @@
     height: 200px;
     width: auto;
     margin-left: 200px;
+    transition: transform 1s;
     /* Your code here */
+}
+
+.astronaut_svg:hover {
+    transform: translate(100px, 0);
+    /* translate(x,y) */
 }
 
 /* Create astronaut hover animation here
@@ -27,9 +37,24 @@
     height: 200px;
     width: auto;
     margin-left: 300px;
-    /* Your animation here
+    /* /* Your animation here */
+
+    /* animation-name: spin;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; */
+    animation: spin 2s linear infinite;
 }
 
+
 @keyframes spin {
-    /* Set up your keyframe animation here
+
+    /* /* Set up your keyframe animation here */
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

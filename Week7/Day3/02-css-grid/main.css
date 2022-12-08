@@ -25,6 +25,7 @@ div {
 
     /* Bonus Phase */
     /* Your code here */
+    row-gap: 15px;
 }
 
 .item-1 {
@@ -70,7 +71,8 @@ div {
 
     /* Bonus Phase */
     /* Your code here */
-    grid-area: .;
+    box-sizing: border-box;
+    width: 100px;
 }
 
 /* ====== */
@@ -86,5 +88,7 @@ div {
     width: auto;
     grid-template-columns: repeat(6, 100px);
     grid-template-rows: repeat(3, 50px);
-    grid-auto-flow: column
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
 }
