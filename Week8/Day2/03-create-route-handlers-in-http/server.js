@@ -1,4 +1,5 @@
 const http = require('http');
+const { url } = require('inspector');
 
 let nextDogId = 1;
 
@@ -34,6 +35,42 @@ const server = http.createServer((req, res) => {
     // Do not edit above this line
 
     // define route handlers here
+
+    if (req.method === 'GET' && req.url === '/') {
+      const resBody = "Dog Club"
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+      return res.end(resBody);
+    }
+
+    if (req.method === 'GET' && req.url === '/dogs') {
+      const resBody = "Dog index"
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+      return res.end(resBody);
+    }
+
+
+    if (req.method === 'POST' && req.url === '/dogs') {
+      res.statusCode = 302;
+
+      const dogId = getNewDogId()
+      res.setHeader('Location', `/dogs/${dogId}`);
+      return res.end('Dog index');
+    }
+
+    if (req.method === 'GET' && req.url.startsWith('/dogs')) {
+      const urlParts = req.url.split("/");
+
+      console.log("url parts ", urlParts)
+      if (urlParts[urlParts.length - 1] !== 'new') {
+        const dogId = urlParts[urlParts.length - 1]
+        res.statusCode = 200
+        res.setHeader('Content-Type', "text/plain");
+        return res.end(`Dog details for dogId ${dogId}`)
+      }
+    }
+
 
     // Do not edit below this line
     // Return a 404 response when there is no matching route handler
