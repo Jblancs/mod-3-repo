@@ -79,7 +79,7 @@ const server = http.createServer((req, res) => {
     if (req.method === 'GET' && req.url === '/') {
       const htmlPage = fs.readFileSync("./views/index.html", 'utf-8');
       const resBody = htmlPage;
-      
+
       res.statusCode = 200;
       res.setHeader("Content-Type", "text/html");
       res.write(resBody);
@@ -88,21 +88,49 @@ const server = http.createServer((req, res) => {
 
     // Phase 1: GET /dogs
     if (req.method === 'GET' && req.url === '/dogs') {
-      // Your code here
+      ////////////////// Your code here
+      const htmlPage = fs.readFileSync('./views/dogs.html', 'utf-8');
+
+      let dogsList = ""
+      dogs.forEach((dog) => {
+        dogsList += `<li>${dog.name}<li>`;
+      })
+
+      console.log('dogs list ', dogsList)
+
+      const resBody = htmlPage.replace(/#{dogsList}/g, dogsList)
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/html')
+      return res.end(resBody);
     }
 
     // Phase 2: GET /dogs/new
     if (req.method === 'GET' && req.url === '/dogs/new') {
-      // Your code here
+      ////////////////// Your code here
+      const resBody = fs.readFileSync('./views/create-dog.html', 'utf-8')
+
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/html');
+      return res.end(resBody)
     }
-    
+
     // Phase 3: GET /dogs/:dogId
     if (req.method === 'GET' && req.url.startsWith('/dogs/')) {
       const urlParts = req.url.split('/');
       if (urlParts.length === 3) {
         const dogId = urlParts[2];
         const dog = dogs.find(dog => dog.dogId == dogId);
-        // Your code here
+        ////////////////// Your code here
+
+        const htmlPage = fs.readFileSync('./views/dog-details.html', 'utf-8')
+
+        const resBody = htmlPage
+          .replace(/#{name}/g, dog.name)
+          .replace(/#{age}/g, dog.age);
+
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/html');
+        return res.end(resBody)
       }
     }
 
@@ -135,7 +163,7 @@ const server = http.createServer((req, res) => {
     const htmlPage = fs.readFileSync("./views/error.html", 'utf-8');
     const resBody = htmlPage
       .replace(/#{message}/g, 'Page Not Found');
-    
+
     res.statusCode = 404;
     res.setHeader("Content-Type", "text/html");
     res.write(resBody);
