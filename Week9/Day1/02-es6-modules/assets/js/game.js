@@ -1,3 +1,11 @@
+import { getIndex } from './utilities.js'
+// above similar to:
+// import * as utils from "./utilities.js"
+// but MUST to update getIndex() to utils.getIndex() (line 14, 24, 34)
+
+import mrPotatoHeadQuotes from './quotes/mrPotatoHead.js';
+import mrsPotatoHeadQuotes from './quotes/mrsPotatoHead.js';
+
 class Game {
 
   start() {
@@ -38,3 +46,5 @@ class Game {
     })
   }
 }
+
+export default Game;
